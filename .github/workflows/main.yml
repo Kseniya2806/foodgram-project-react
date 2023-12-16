@@ -100,7 +100,7 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
-          context: ./infra/nginx/
+          context: ./nginx/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/foodgram_gateway:latest
 
@@ -109,6 +109,7 @@ jobs:
     needs: 
       - build_and_push_to_docker_hub
       - build_frontend_and_push_to_docker_hub
+      - build_gateway_and_push_to_docker_hub
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
@@ -120,7 +121,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source: "./docs/*"
-        target: "foodgram"
+        target: "foodgram/infra"
     - name: Executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
