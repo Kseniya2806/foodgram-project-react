@@ -1,5 +1,6 @@
 # praktikum_new_diplom
-[![foodgram_workflow](https://github.com/kseniya2806/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)](https://github.com/kseniya2806/foodgram-project-react/actions/workflows/foodgram_workflow.yml)
+[![Main Foodgram workflow](https://github.com/Kseniya2806/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/Kseniya2806/foodgram-project-react/actions/workflows/main.yml)
+
 # "Продуктовый помощник" (Foodgram)
 
 ---
@@ -100,9 +101,9 @@ sudo docker compose -f docker-compose.production.yml exec backend python manage.
 ``` 
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py demo_data
 
----
-
+``` 
 ## Автор <a id=7></a>
 
 Ксения Заболоцкая
 https://github.com/Kseniya2806/
+
