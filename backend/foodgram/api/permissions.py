@@ -9,4 +9,3 @@ class IsRecipeAuthorOrReadOnly(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         return obj.author == request.user
-
