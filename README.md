@@ -21,6 +21,12 @@
 Стек технологий: Python 3, Django, Django Rest, React, Docker, PostgreSQL, nginx, gunicorn, Djoser.
 
 ---
+##### Клонировать проект из репозитория <a id=2></a>
+Клонируйте репозиторий отсюда https://github.com/Kseniya2806/foodgram-project-react
+
+---
+
+---
 
 ##### Настроить Docker <a id=2></a>
 
