@@ -17,15 +17,13 @@ services:
   backend:
     depends_on:
       - db
-    build: ../backend/foodgram/
+    image: kseniya2806/foodgram_backend
     env_file: .env
     volumes:    
       - static:/app/collected_static/
       - media:/app/media/
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+    image: kseniya2806/foodgram_frontend
     volumes:
       - ../frontend/:/app/result_build/
   nginx:
