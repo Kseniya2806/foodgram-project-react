@@ -1,4 +1,4 @@
-version: '3'
+version: '3.10.12'
 
 volumes:
   media:
@@ -17,13 +17,15 @@ services:
   backend:
     depends_on:
       - db
-    image: kseniya2806/foodgram_backend
+    build: ../backend/foodgram/
     env_file: .env
     volumes:    
       - static:/app/collected_static/
       - media:/app/media/
   frontend:
-    image: kseniya2806/foodgram_frontend
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
     volumes:
       - ../frontend/:/app/result_build/
   nginx:

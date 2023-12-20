@@ -1,4 +1,2 @@
 venv
 .git
-db.sqlite3.bak
-.env
