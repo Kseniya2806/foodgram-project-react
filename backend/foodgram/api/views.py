@@ -14,8 +14,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from recipes.models import (FavoriteRecipe, Follow, Ingredient,
-                            IngredientAmount, Recipe, ShoppingCart, Tag, User)
 from .filters import IngredientFilter, RecipeFilter
 from .paginators import PageLimitPagination
 from .permissions import IsRecipeAuthorOrReadOnly
@@ -24,6 +22,8 @@ from .serializers import (FollowSerializer, IngredientSerializer,
                           RecipeSerializer, SetPasswordSerializer,
                           TagSerializer, UserCreateSerializer,
                           UserGetSerializer)
+from recipes.models import (FavoriteRecipe, Follow, Ingredient,
+                            IngredientAmount, Recipe, ShoppingCart, Tag, User)
 
 
 class UserViewSet(mixins.CreateModelMixin,
