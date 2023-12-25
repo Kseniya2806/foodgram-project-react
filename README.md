@@ -1,4 +1,4 @@
-# praktikum_new_diplom
+# Foodgram
 [![Main Foodgram workflow](https://github.com/Kseniya2806/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/Kseniya2806/foodgram-project-react/actions/workflows/main.yml)
 
 # "Продуктовый помощник" (Foodgram)
