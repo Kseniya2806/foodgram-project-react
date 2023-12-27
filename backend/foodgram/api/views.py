@@ -30,6 +30,7 @@ class UserViewSet(mixins.CreateModelMixin,
                   mixins.ListModelMixin,
                   mixins.RetrieveModelMixin,
                   viewsets.GenericViewSet):
+    """ViewSet для работы с пользователями."""
     queryset = User.objects.all()
     pagination_class = PageLimitPagination
 
@@ -125,7 +126,7 @@ class UserViewSet(mixins.CreateModelMixin,
 
 
 class TokenLoginViewSet(APIView):
-
+    """ViewSet для работы с токенами."""
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
@@ -148,7 +149,7 @@ class TokenLoginViewSet(APIView):
 
 
 class TokenLogoutViewSet(APIView):
-
+    """ViewSet для проверки токена."""
     def post(self, request):
         user = request.user
 

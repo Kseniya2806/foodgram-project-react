@@ -7,7 +7,7 @@ from .validators import validate_username
 
 
 class User(AbstractUser):
-
+    """Модель пользователей."""
     email = models.EmailField(
         max_length=254,
         unique=True,
@@ -34,7 +34,7 @@ class User(AbstractUser):
 
 
 class Tag(models.Model):
-    """Модель для Tags"""
+    """Модель тегов."""
     name = models.CharField(max_length=200, verbose_name='Тег')
     color = ColorField(format='hexa', verbose_name='Цвет')
     slug = models.SlugField(max_length=200, unique=True)
@@ -44,7 +44,7 @@ class Tag(models.Model):
 
 
 class Ingredient(models.Model):
-    """Модель для Ingredients"""
+    """Модель ингредиентов."""
     name = models.CharField(max_length=200, verbose_name='Ингредиент')
     measurement_unit = models.CharField(max_length=200)
 
@@ -59,7 +59,7 @@ class Ingredient(models.Model):
 
 
 class Recipe(models.Model):
-    """Модель для Recipes"""
+    """Модель рецептов."""
     name = models.CharField(max_length=200, verbose_name='Название рецепта')
     text = models.TextField(
         verbose_name='Описание',
@@ -98,6 +98,7 @@ class Recipe(models.Model):
 
 
 class IngredientAmount(models.Model):
+    """Класс проверки количества ингридиентов."""
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
@@ -121,6 +122,7 @@ class IngredientAmount(models.Model):
 
 
 class FavoriteRecipe(models.Model):
+    """Класс подписки на пользователя и рецепт."""
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -142,6 +144,7 @@ class FavoriteRecipe(models.Model):
 
 
 class Follow(models.Model):
+    """Класс подписки на автора рецептов."""
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -169,6 +172,7 @@ class Follow(models.Model):
 
 
 class ShoppingCart(models.Model):
+    """Класс списка покупок."""
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

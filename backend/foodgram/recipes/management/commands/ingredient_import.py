@@ -4,12 +4,9 @@ from django.core.management.base import BaseCommand
 
 from recipes.models import Ingredient
 
-# docker compose exec backend python manage.py  \
-# ingredient_import data/ingredients.csv
-
 
 class Command(BaseCommand):
-    help = 'Загрузка данных из CSV файла в базу данных Django'
+    help = 'Загрузка данных из списка в формате CSV в базу данных.'
 
     def add_arguments(self, parser):
         parser.add_argument('csv_file', help='foodgram.data.ingridients.csv')
@@ -28,6 +25,6 @@ class Command(BaseCommand):
                     your_model_instance.save()
 
                 self.stdout.write(self.style.SUCCESS(
-                    'Данные успешно загружены в базу данных'))
+                    'Данные успешно загружены в базу данных.'))
         except Exception as e:
             self.stdout.write(self.style.ERROR(f'Произошла ошибка: {str(e)}'))
